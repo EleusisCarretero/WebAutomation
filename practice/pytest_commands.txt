@@ -1,0 +1,2 @@
+Example of running a test using pytest:
+pytest -v "E:\11)_Eleusis_Git_Stuf\WebAutomation\practice\Selenium_Webdriver_with_PYTHON_from_Scratch_Frameworks\test_frames\test_practice_frames.py" --log-cli-level=DEBUG
