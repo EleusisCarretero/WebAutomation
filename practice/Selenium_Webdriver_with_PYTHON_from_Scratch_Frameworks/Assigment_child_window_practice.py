@@ -57,6 +57,16 @@ class ResultManager:
             self.logger.error(f"FAILED, Assert Equals - {step_msg}")
             self.logger.error(f"The given actual value: '{actual_value}' IS EQUAL TO the expected value: {expected_value}")
 
+    def check_not_raises_any_exception(self, method, step_msg, *args, **kwars):
+        try:
+            response = method(*args, **kwars)
+            self.logger.info(f"PASSED, Assert NOT raises exception - {step_msg}")
+            return response
+        except Exception as e:
+            self.logger.error(f"FAILED, Assert Raises excpetion - {step_msg}")
+            self.logger.error(f"The given method: '{method.__name__}' HAS RAISED the exception {e}")
+
+
 
 
 class BrowserManagerError(Exception):
