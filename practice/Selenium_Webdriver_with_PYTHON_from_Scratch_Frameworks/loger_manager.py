@@ -1,21 +1,24 @@
 import logging
 import inspect
+import os
 
 
 class LoggerManager:
-    def __init__(self, active_logs=True):
+    def __init__(self, active_logs=True, default_log_folder="DEFAULT_LOG_FOLDER"):
         self.active_logs = active_logs
-        self._setup_logger()
+        self._setup_logger(default_log_folder)
 
-    def _setup_logger(self):
-        caller_frame = inspect.stack()[2]  # Cambiar índice a [2]
-        caller_file = caller_frame.filename
-        caller_file_name = caller_file[caller_file.rfind("/") + 1:caller_file.find(".py")]
+    def _setup_logger(self, default_log_folder):
+        current_file_path  = os.path.abspath(__file__)
+        caller_file_name = current_file_path.split("\\")[-1].strip(".py")
+        current_dir = os.path.dirname(current_file_path)
+        default_log_folder_path = os.path.join(os.path.abspath(os.path.join(current_dir, "..", "..", "..")), default_log_folder)
+        
+        print(default_log_folder_path)
 
         if self.active_logs:
             logging.basicConfig(
                 level=logging.DEBUG,
-                # filename=f"{caller_file_name}.log",  # Usar el archivo del invocador
                 filemode='a',
                 format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                 datefmt='%Y-%m-%d %H:%M:%S'
@@ -36,3 +39,9 @@ class LoggerManager:
 
     def get_logger(self, name):
         return logging.getLogger(name)
+
+if __name__ == '__main__':
+    # test the logger
+    local_logger = LoggerManager(active_logs=True).get_logger("mylogger")
+    local_logger.info("Save info")
+    local_logger.error("Showing error")
