@@ -1,0 +1,58 @@
+Selenium Manager binary found at: E:\11)_Eleusis_Git_Stuf\WebAutomation\web_automation\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe
+Executing process: E:\11)_Eleusis_Git_Stuf\WebAutomation\web_automation\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --debug --language-binding python --output json
+chromedriver not found in PATH
+chrome detected at C:\Program Files\Google\Chrome\Application\chrome.exe
+Running command: wmic datafile where name='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' get Version /value
+Output: "\r\r\n\r\r\nVersion=131.0.6778.140\r\r\n\r\r\n\r\r\n\r"
+Detected browser: chrome 131.0.6778.140
+Required driver: chromedriver 131.0.6778.204
+chromedriver 131.0.6778.204 already in the cache
+Driver path: C:\Users\eleus\.cache\selenium\chromedriver\win64\131.0.6778.204\chromedriver.exe
+Browser path: C:\Program Files\Google\Chrome\Application\chrome.exe
+Started executable: `C:\Users\eleus\.cache\selenium\chromedriver\win64\131.0.6778.204\chromedriver.exe` in a child process with pid: 2740 using 0 to output -3
+POST http://localhost:50555/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'browserVersion': None, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'args': []}}}}
+Starting new HTTP connection (1): localhost:50555
+http://localhost:50555 "POST /session HTTP/11" 200 0
+Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"131.0.6778.140","chrome":{"chromedriverVersion":"131.0.6778.204 (52183f9e99a61056f9b78535f53d256f1516f2a0-refs/branch-heads/6778_155@{#7})","userDataDir":"C:\\Users\\eleus\\AppData\\Local\\Temp\\scoped_dir2740_1803389112"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:50558"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"ba63901b36b2113dc371dd4067696336"}} | headers=HTTPHeaderDict({'Content-Length': '884', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/url {'url': 'https://rahulshettyacademy.com/AutomationPractice/'}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/url HTTP/11" 200 0
+Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+Opening page: https://rahulshettyacademy.com/AutomationPractice/
+Calling method implicitly_wait with args (2,), kwargs {}
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/timeouts {'implicit': 2000}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/timeouts HTTP/11" 200 0
+Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/element {'using': 'css selector', 'value': '[id="courses-iframe"]'}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/element HTTP/11" 200 0
+Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.4D40452888D5D6B52E8198C0A5EC784D.d.1FD4D1498A413992EA80CEAA6DD5C887.e.79"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/frame {'id': {'element-6066-11e4-a52e-4f735466cecf': 'f.4D40452888D5D6B52E8198C0A5EC784D.d.1FD4D1498A413992EA80CEAA6DD5C887.e.79'}}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/frame HTTP/11" 200 0
+Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+PASSED, Assert NOT raises exception - Check switching to courses-iframe successfully
+Calling method find_element with args ('class name', 'login-btn'), kwargs {}
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/element {'using': 'css selector', 'value': '.login-btn'}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/element HTTP/11" 200 0
+Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.DC489D588A092AE0531FF2C710DAAA29.d.104F923B5D06E44407453B614992EF37.e.65"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+PASSED, Assert NOT raises exception - Check the login button login-btn exist
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/element/f.DC489D588A092AE0531FF2C710DAAA29.d.104F923B5D06E44407453B614992EF37.e.65/click {}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/element/f.DC489D588A092AE0531FF2C710DAAA29.d.104F923B5D06E44407453B614992EF37.e.65/click HTTP/11" 200 0
+Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+PASSED, Assert NOT raises exception - Check the login button login-btn is clickable
+Calling method find_element with args ('xpath', '//div[@id="sub-frame-error"]/div[@class="icon icon-generic"]'), kwargs {}
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/element {'using': 'xpath', 'value': '//div[@id="sub-frame-error"]/div[@class="icon icon-generic"]'}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/element HTTP/11" 200 0
+Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.DC489D588A092AE0531FF2C710DAAA29.d.65FDE98EC066FF653DEA0E42374A8EA0.e.2"}} | headers=HTTPHeaderDict({'Content-Length': '125', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+PASSED, Assert NOT raises exception - Check the Error icon icon icon-generic exists
+POST http://localhost:50555/session/ba63901b36b2113dc371dd4067696336/frame {'id': None}
+http://localhost:50555 "POST /session/ba63901b36b2113dc371dd4067696336/frame HTTP/11" 200 0
+Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+Finished Request
+PASSED, Assert NOT raises exception - Check going back to default page https://rahulshettyacademy.com/AutomationPractice/ succesfully
