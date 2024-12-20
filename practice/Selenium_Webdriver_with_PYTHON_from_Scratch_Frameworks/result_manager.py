@@ -18,9 +18,11 @@ class ResultManagerClass:
         try:
             assert actual_value == expected_value
             self.logger.info(f"PASSED, Assert Equals - {step_msg}")
+            self.step_status = True
         except AssertionError as e:
             self.logger.error(f"FAILED, Assert NOT Equals - {step_msg}")
             self.logger.error(f"The given actual value: '{actual_value}' IS NOT EQUAL TO the expected value: {expected_value}")
+            self.step_status = False
 
     def check_not_equals_to(self, actual_value, expected_value, step_msg):
         try:

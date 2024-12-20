@@ -33,8 +33,8 @@ class TestFrames:
         [
         ("fa-youtube"),
         ("fa-linkedin"),
-        # ("theme-btn"),
-        # ("register-btn")
+        ("theme-btn"),
+        ("register-btn")
         ]
     )
     def test_login_buttom(self, button):
