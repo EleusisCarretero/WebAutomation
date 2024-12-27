@@ -1,6 +1,7 @@
 
 class ResultManagerClass:
     def __init__(self, logger_manager):
+        # logger_name = inspect.stack()[1][3]
         self.logger = logger_manager.get_logger(self.__class__.__name__)
         self._step_status = False
 

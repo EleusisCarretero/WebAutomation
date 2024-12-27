@@ -1,2 +1,50 @@
+Print any console log:
+    pytest -v -s "<Path\to\pytest\file.py>"
+Run testcases with partial name
+    pytes -v -k example : This will run al the test cases with the 'example' str as part of their names
+
+Run testcases wich have an scpecifc mark, as for example smoke, sanity, etc
+    pytest -v -m smoke : this will execute all the test case which have the mark smoke, @pytest.mark.smoke
+
+After installing pytest-hmtl extension, generates a html file report
+    pytest -v  --html=report.html
+
+*Talking about webautomation testing: 
+Based on the example from "How to change command line options defaults" https://docs.pytest.org/en/stable/example/simple.html
+
+1. Declared a parse method
+def pytest_addoption(parser):
+    parser.addoption(
+        "--browser_name", action="store", default="Chrome", help="By default the choseen browser is Chrome"
+    )
+2. It can be consumed by some test_ or a setup methodo form conftest
+@pytest.fixture(scope="class")
+def setup(request):
+    browser_name = request.config.getOption("browser_name")
+    if browser_name == op1:
+        lalala
+    elif browser_name == op2:
+        lololo
+    ...
+    yield
+    .. teardown actions
+
+In generla for pytest ina 'setup' (fixture) method you can asign a local variable to a clas variable (from the method is called)
+def setup(request):
+    global driver
+    browser_name=request.config.getoption("browser_name")
+    if browser_name == "chrome":
+        driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+    elif browser_name == "firefox":
+        driver = webdriver.Firefox(executable_path="C:\\geckodriver.exe")
+    elif browser_name == "IE":
+        print("IE driver")
+    driver.get("https://rahulshettyacademy.com/angularpractice/")
+    driver.maximize_window()
+
+    request.cls.driver = driver   <<<<<<<<<<<<<<<<<<<<<<<<<<< THIS: so the test_ method can have access to this
+    yield
+    driver.close()
+
 Example of running a test using pytest:
 pytest -v "E:\11)_Eleusis_Git_Stuf\WebAutomation\practice\Selenium_Webdriver_with_PYTHON_from_Scratch_Frameworks\test_frames\test_practice_frames.py" --log-cli-level=DEBUG

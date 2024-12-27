@@ -1,0 +1,2 @@
+1.- Intsall openpyxl:
+    pip install openpyxl

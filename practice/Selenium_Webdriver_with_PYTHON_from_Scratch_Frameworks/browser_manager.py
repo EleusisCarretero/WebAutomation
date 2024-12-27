@@ -15,6 +15,7 @@ class BrowserManagerClass:
         """
         self.driver = None
         self.chrome_otions = None
+        # logger_name = inspect.stack()[1][3]
         self.logger = logger_manager.get_logger(self.__class__.__name__)
         self.initialize_webdriver(type_browser, *args)
         if path_page:
